@@ -286,6 +286,8 @@ sub parse_hits_within_taxon{
       }elsif( $line =~ /Expect =\s*(\d+)/ ){
 	$hit_e_value =  $1;
       }
+
+      $hit_e_value =~ s/, Method:.*$//;  # VCRU change to fix "Argument "1.2, Method: Compositional matrix adjust." isn't numeric in numeric le (<=) at /var/www/cgi-bin/mitofy/annotate/mitofy.pl line 207."
       
       # parse length of match from number of identities
       if( $line =~ /Identities = (\d+)\/(\d+) \((\d+)\%\),/ ){

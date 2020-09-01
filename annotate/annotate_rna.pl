@@ -689,7 +689,9 @@ sub rna_print_nt {
     #build the actual coordinate string, by concatenating the coordinates and spaces
     for( $i = 0; $i < @caret_coordinates; $i++ ){
       $position_string .= $caret_coordinates[$i];
+{ no warnings;  # VCRU addition, newer versions of Perl will give "Negative repeat count does nothing at /var/www/cgi-bin/mitofy/annotate/annotate_rna.pl line 692" warnings, although this is probably a true bug here
       $position_string .= "&nbsp;" x $num_spaces[$i];
+} # VCRU addition
     }
     
     #print coordinates below nt sequences

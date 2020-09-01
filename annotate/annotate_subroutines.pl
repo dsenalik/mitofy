@@ -1,5 +1,6 @@
 use strict;
 use warnings;
+my $webbase = $ENV{"webbase"};  # VCRU addition this is the URL of the mitofy cgi directory
 
 #############################################################################
 # Called by parse_matching_sequence (above), formats and prints subject AA
@@ -377,7 +378,7 @@ sub print_output_header{
 		"}\n";
 
   print HTML "</style>\n";
-  print HTML "<body onLoad=\"window.open(\'http:\/\/127.0.0.1\/cgi-bin\/make_annotation_form.cgi?gene_name=$gene&taxon=$query_taxon&project=$project\',\'mywindow\',\'width=550,height=680,resizable=yes,menubar=no,screenX=0,screenY=0\')\">\n";
+  print HTML "<body onLoad=\"window.open(\'${webbase}make_annotation_form.cgi?gene_name=$gene&taxon=$query_taxon&project=$project\',\'mywindow\',\'width=550,height=680,resizable=yes,menubar=no,scrollbars=1,screenX=0,screenY=0\')\">\n"; # VCRU change, add path $webbase
 
   # @$gene_lengths_ref = sort {$a <=> $b}( @$gene_lengths_ref);
   # my $gl = join( ',&nbsp;', @$gene_lengths_ref);
@@ -392,7 +393,7 @@ sub print_output_header{
 
   print HTML "<table valign=\"middle\">\n\t<tr nowrap valign=\"middle\">\n";
   print HTML "\t\t<td>", '&nbsp;' x 85, "<\/td>\n";
-  print HTML "\t\t<td><table><form METHOD=\"GET\"><INPUT TYPE=\"button\" VALUE=\"Annotate\" onClick=\"window.open(\'http:\/\/127.0.0.1\/cgi-bin\/make_annotation_form.cgi?gene_name=$gene&taxon=$query_taxon&project=$project\',\'Sequin_form\',\'width=550,height=680,resizable=yes,menubar=no\')\"><\/form><\/table><\/td>\n";
+  print HTML "\t\t<td><table><form METHOD=\"GET\"><INPUT TYPE=\"button\" VALUE=\"Annotate\" onClick=\"window.open(\'${webbase}make_annotation_form.cgi?gene_name=$gene&taxon=$query_taxon&project=$project\',\'Sequin_form\',\'width=550,height=680,scrollbars=1,resizable=yes,menubar=no\')\"><\/form><\/table><\/td>\n";
   if( $rna_bool ){
     print HTML "\t\t<td><font face=\"Courier\" color=\"blue\" size=\"6\">&nbsp;&nbsp;&nbsp;$gene&nbsp;($gl&nbsp;nt)<\/font><\/td>\n";
   }else{
@@ -465,8 +466,8 @@ sub print_output_footer{
       #print "gene" row header
       print HTML_SUM "\t\t<td align=\"left\"><font face=\"Arial\" color=\"purple\" size=\"4\">$gene&nbsp;<\/font><\/td>\n";
       #print "Annotate" button
-      #print HTML_SUM "\t\t<td><table><tr align=\"left\"><form><INPUT TYPE=\"button\" VALUE=\"Annotate\" onClick=\"window.open(\'$out_directory/$gene.html\',\'BLAST_summary\')\"><\/form><\/table><\/td>\n";
-      print HTML_SUM "\t\t<td><table><tr align=\"left\"><form><INPUT TYPE=\"button\" VALUE=\"Annotate\" onClick=\"window.open(\'$html_files->{$gene}\',\'BLAST_summary\')\"><\/form><\/table><\/td>\n";
+      #print HTML_SUM "\t\t<td><table><tr align=\"left\"><form><INPUT TYPE=\"button\" VALUE=\"Annotate\" onClick=\"window.open(\'$out_directory/$gene.html\',\'BLAST_summary\',\'scrollbars=1,resizable=1\')\"><\/form><\/table><\/td>\n";
+      print HTML_SUM "\t\t<td><table><tr align=\"left\"><form><INPUT TYPE=\"button\" VALUE=\"Annotate\" onClick=\"window.open(\'$html_files->{$gene}\',\'BLAST_summary\',\'scrollbars=1,resizable=1\')\"><\/form><\/table><\/td>\n";
       #print link to "Raw BLAST output"
       print HTML_SUM "\t\t<td align=\"right\"><a href=\"$blast_files->{$gene}\"><font face=\"Arial\">$gene BLAST output<\/font><\/a><\/td>\n";
       print HTML_SUM "\t<\/tr>\n";	

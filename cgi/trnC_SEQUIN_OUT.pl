@@ -27,6 +27,7 @@ my $type        = param('type');
 
 my $sequin_outfile = $project . ".tbl";
 my $outfile_path = "cgi_out/"; #DIRECTORY
+   $outfile_path = "/var/www/html/tmp/${project}_out/";  # VCRU change this is where output files are stored
 
 my $cis_coords = param( 'gene_coords' );
 ( $cis_start, $cis_end ) = split( /\D+/, $cis_coords );

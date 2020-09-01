@@ -1,5 +1,8 @@
 use strict;
 use warnings;
+my $mitofybinbase = $ENV{"mitofybinbase"};  # VCRU addition this is where mitofy.pl and other called programs are located
+my $webbase = $ENV{"webbase"};  # VCRU addition this is the URL of the mitofy cgi directory (not used here, only shown for complete list)
+my $trnascandir = $ENV{"trnascandir"};  # VCRU addition this is where tRNAscan-SE was installed to
 
 #############################################################################
 # called by annotate_rna; opens and parses output from tRNAscan-SE
@@ -7,8 +10,8 @@ use warnings;
 sub parse_trnascan{
   my( $infile, $file_ref, $project, $query_taxon, $out_directory, $missed_by_blast_ref, $missed_by_tscan_ref, $missed_ref, $rna_html_files_Href, $all_found_ref, $tscan_html_files_Href, $tscan_html_paths ) = @_;
   my $outfile;
-  my $tscan_out = $project . "_tRNAscan.out";
-  my $tscan_struct_out = $project . "_tRNAscan.struct";
+  my $tscan_out = "tRNAscan.out";  # VCRU change, no $project_ prefix, directory now has project name
+  my $tscan_struct_out = "tRNAscan.struct";  # VCRU change, same as line above
   my $tscan = 1;
   my %tscan_results;
 
@@ -39,7 +42,9 @@ sub parse_trnascan{
   # if necessary, run tRNA-scan
   unless( -e "$out_directory/$tscan_out" ){
     print "\n\n\t\'$tscan_out\' not found, running tRNA-scan now (this might take a while) . . .\n";
-    system( "tRNAscan/tRNAscan-SE -q -O -o $out_directory/$tscan_out -f $out_directory/$tscan_struct_out $infile" );
+    my $cmd =  $trnascandir."/tRNAscan-SE -q -O -o $out_directory/$tscan_out -f $out_directory/$tscan_struct_out $infile"; # VCRU change, add path $mitofybinbase
+    my $result = system ( $cmd );
+    if ( $result ) { print "Error code $result returned by command \"$cmd\"\n"; }
   }
 
   # parse tRNA-scan output
@@ -347,7 +352,7 @@ sub print_trn_title{
     $gene_name = $trna_letters->{$aa};
     print HTML "<table valign=\"middle\">\n\t<tr nowrap valign=\"middle\">\n";
     print HTML "\t\t<td><font face=\"Times\">", '&nbsp;' x 85, "<\/font><\/td>\n";
-    print HTML "\t\t<td><table><form METHOD=\"GET\"><INPUT TYPE=\"button\" VALUE=\"Annotate\" onClick=\"window.open(\'http:\/\/127.0.0.1\/cgi-bin\/trna_make_annotation_form.cgi?gene_name=$gene_name&gene_coords=$coords&product=tRNA-$aa&note=anticodon:$anti&taxon=$query_taxon&project=$project\',\'Sequin_form\',\'width=550,height=600,resizable=yes,menubar=no\')\"><\/form><\/table><\/td>\n";
+    print HTML "\t\t<td><table><form METHOD=\"GET\"><INPUT TYPE=\"button\" VALUE=\"Annotate\" onClick=\"window.open(\'${webbase}trna_make_annotation_form.cgi?gene_name=$gene_name&gene_coords=$coords&product=tRNA-$aa&note=anticodon:$anti&taxon=$query_taxon&project=$project\',\'Sequin_form\',\'width=550,height=600,scrollbars=1,resizable=yes,menubar=no\')\"><\/form><\/table><\/td>\n"; # VCRU change, add path $webbase
     print HTML "\t\t<td><font face=\"Courier\" color=\"blue\" size=\"6\">&nbsp;&nbsp;&nbsp;$gene_name&nbsp;($length&nbsp;nt)<\/font><\/td>\n";
     print HTML "\t<\/tr>\n<\/table>\n<br><br>\n";
 
@@ -355,7 +360,7 @@ sub print_trn_title{
     $gene_name = "trn" . $trna_letters->{$aa} . "-" . $anti;
     print HTML "<table valign=\"middle\">\n\t<tr nowrap valign=\"middle\">\n";
     print HTML "\t\t<td><font face=\"Times\">", '&nbsp;' x 85, "<\/font><\/td>\n";
-    print HTML "\t\t<td><table><form METHOD=\"GET\"><INPUT TYPE=\"button\" VALUE=\"Annotate\" onClick=\"window.open(\'http:\/\/127.0.0.1\/cgi-bin\/trnC_make_annotation_form.cgi?gene_name=$gene_name&gene_coords=$coords&product=tRNA-$aa&note=anticodon:$anti&taxon=$query_taxon&project=$project\',\'Sequin_form\',\'width=550,height=600,resizable=yes,menubar=no\')\"><\/form><\/table><\/td>\n";
+    print HTML "\t\t<td><table><form METHOD=\"GET\"><INPUT TYPE=\"button\" VALUE=\"Annotate\" onClick=\"window.open(\'${webbase}trnC_make_annotation_form.cgi?gene_name=$gene_name&gene_coords=$coords&product=tRNA-$aa&note=anticodon:$anti&taxon=$query_taxon&project=$project\',\'Sequin_form\',\'width=550,height=600,scrollbars=1,resizable=yes,menubar=no\')\"><\/form><\/table><\/td>\n"; # VCRU change, add path $webbase
     print HTML "\t\t<td><font face=\"Courier\" color=\"blue\" size=\"6\">&nbsp;&nbsp;&nbsp;$gene_name&nbsp;($length&nbsp;nt)<\/font><\/td>\n";
     print HTML "\t<\/tr>\n<\/table>\n<br><br>\n";
 
@@ -363,7 +368,7 @@ sub print_trn_title{
     $gene_name = "trn" . $trna_letters->{$aa} . "-" . $anti;
     print HTML "<table valign=\"middle\">\n\t<tr nowrap valign=\"middle\">\n";
     print HTML "\t\t<td><font face=\"Times\">", '&nbsp;' x 85, "<\/font><\/td>\n";
-    print HTML "\t\t<td><table><form METHOD=\"GET\"><INPUT TYPE=\"button\" VALUE=\"Annotate\" onClick=\"window.open(\'http:\/\/127.0.0.1\/cgi-bin\/trna_make_annotation_form.cgi?gene_name=$gene_name&gene_coords=$coords&product=tRNA-$aa&note=anticodon:$anti&taxon=$query_taxon&project=$project\',\'Sequin_form\',\'width=550,height=600,resizable=yes,menubar=no\')\"><\/form><\/table><\/td>\n";
+    print HTML "\t\t<td><table><form METHOD=\"GET\"><INPUT TYPE=\"button\" VALUE=\"Annotate\" onClick=\"window.open(\'${webbase}trna_make_annotation_form.cgi?gene_name=$gene_name&gene_coords=$coords&product=tRNA-$aa&note=anticodon:$anti&taxon=$query_taxon&project=$project\',\'Sequin_form\',\'width=550,height=600,scrollbars=1,resizable=yes,menubar=no\')\"><\/form><\/table><\/td>\n"; # VCRU change, add path $webbase
     print HTML "\t\t<td><font face=\"Courier\" color=\"blue\" size=\"6\">&nbsp;&nbsp;&nbsp;$gene_name&nbsp;($length&nbsp;nt)<\/font><\/td>\n";
     print HTML "\t<\/tr>\n<\/table>\n<br><br>\n";
   }

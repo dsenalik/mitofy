@@ -3,7 +3,6 @@
 use CGI qw( :standard );
 use strict;
 use warnings;
-
 ######################################MAIN###################################
 my( $cis_start, $cis_end );
 my( $ex1_start, $ex2_start, $ex3_start, $ex4_start, $ex5_start );
@@ -21,6 +20,7 @@ my $pseudo      = param('pseudo');
 
 my $sequin_outfile = $project . ".tbl";
 my $outfile_path   = "cgi_out/"; #DIRECTORY
+   $outfile_path = "/var/www/html/tmp/${project}_out/";  # VCRU change this is where output files are stored
 
 # for transl_except
 my $te_1s  = param('te_1s');
@@ -89,6 +89,7 @@ if( $exon5 ){
 if( -e "$outfile_path$sequin_outfile" ){
   print_SEQUIN( $cis_start, $cis_end, \@exons, $exon1, $exon2, $exon3, $exon4, $exon5, $ex1_start, $ex2_start, $ex3_start, $ex4_start, $ex5_start, $ex1_end, $ex2_end, $ex3_end, $ex4_end, $ex5_end, $gene, $taxon, $sequin_outfile, $outfile_path, $cis_coords, $feature_key, $product, $notes, $te1, $te2, $pseudo );
 }else{
+print STDERR "HD \"$outfile_path\" \"$sequin_outfile\"\n"; #@@@
   open( SEQUIN, ">$outfile_path$sequin_outfile" ) || print "Can't open $!";
   print SEQUIN ">Feature $taxon\n";
   close SEQUIN;

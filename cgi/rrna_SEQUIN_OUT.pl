@@ -21,6 +21,7 @@ my $sequin_outfile = $project . ".tbl";
 # my $summary_outfile = $taxon . "_summary.txt";
 #my $outfile_path = "/Library/WebServer/CGI-Executables/cgi_out/"; #DIRECTORY
 my $outfile_path = "cgi_out/"; #DIRECTORY
+   $outfile_path = "/var/www/html/tmp/${project}_out/";  # VCRU change this is where output files are stored
 
 my $cis_coords = param( 'gene_coords' );
 ( $cis_start, $cis_end ) = split( /\D+/, $cis_coords );

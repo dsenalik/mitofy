@@ -1,15 +1,27 @@
 #!/usr/bin/perl
+# VCRU changes and additions by Douglas Senalik dsenalik@wisc.edu
+# VCRU for our public MITOFY Web Server at http://vcru.wisc.edu/cgi-bin/mitofy/mitofy.cgi
+# VCRU The original version of mitofy.pl had a file data of March 22, 2012
+# VCRU all modifications to the original mitofy.pl are labelled with the string  # VCRU
+# VCRU this modified version of mitofy.pl will be called by the cgi mitofy.cgi (not part of the original Mitofy)
 
 use strict;
 use warnings;
 use Getopt::Long;
 
-require "annotate_subroutines.pl";
-require "annotate_rna.pl";
-require "parse_trnascan.pl";
-require "rna_html_pages.pl";
-require "print_nt_with_gaps.pl";
-require "nad5_ex3.pl";
+# VCRU additions, these 5 variables are passed in from the cgi program mitofy.cgi when it calls mitofy.pl
+# VCRU and they are also referenced from some of the other mitofy scripts
+my $outpath = $ENV{"outpath"};  # VCRU addition this is where output files will be stored
+my $mitofybinbase = $ENV{"mitofybinbase"};  # VCRU addition this is where mitofy.pl and other called programs are located
+my $blastplusdir = $ENV{"blastplusdir"};  # VCRU addition this is where the NCBI blast+ programs are located
+my $webbase = $ENV{"webbase"};  # VCRU addition this is the URL of the mitofy cgi directory (not used here, only shown for complete list)
+my $trnascandir = $ENV{"trnascandir"};  # VCRU addition this is where tRNAscan-SE was installed to
+require "$mitofybinbase/annotate_subroutines.pl";  # VCRU change put path in variable
+require "$mitofybinbase/annotate_rna.pl";  # VCRU change put path in variable
+require "$mitofybinbase/parse_trnascan.pl";  # VCRU change put path in variable
+require "$mitofybinbase/rna_html_pages.pl";  # VCRU change put path in variable
+require "$mitofybinbase/print_nt_with_gaps.pl";  # VCRU change put path in variable
+require "$mitofybinbase/nad5_ex3.pl";  # VCRU change put path in variable
 
 ######################################MAIN###################################
 our $PROT_EMAX = 1e-3;
@@ -72,16 +84,14 @@ if( $fasta_count > 1 ){
 }
 
 # create output directory
-$out_directory = "blast_output/$project"."_out";
-
-unless( -e "$out_directory" ){
-  `mkdir $out_directory`;
-}
+#$out_directory = "blast_output/$project"."_out"; # VCRU comment out, replace with next lines
+$out_directory = $outpath;  # VCRU change, this is created by calling cgi
 
 open( MISSED,">$out_directory/missed.txt" ) || die "Couldn't open missed.txt: $!\n";
 
 my @mt_genes = qw( atp1 atp4 atp6 atp8 atp9 ccmB ccmC ccmFc ccmFn cob cox1 cox2 cox3 matR mttB nad1 nad2 nad3 nad4 nad4L nad5 nad5_ex3 nad6 nad7 nad9 rpl2 rpl5 rpl10 rpl16 rps1 rps2 rps3 rps4 rps7 rps10 rps11 rps12 rps13 rps14 rps19 sdh3 sdh4 );
 
+print "<pre>";  # VCRU addition, for conversion to full cgi interface, display progress as preformatted 
 print "\n\nBLASTing genes . . . \n";
 
 foreach $gene ( @mt_genes ){
@@ -102,8 +112,8 @@ foreach $gene ( @mt_genes ){
 
   #run BLAST for current gene
   if( $gene eq "nad5_ex3" ){
-    # open( BLASTRUN, "blastall -p blastn -d blast_dbs/mt_genes/$gene/$gene -i $infile | " );
-    open( BLASTRUN, "blast/blastn -word_size 9 -reward 2 -penalty -3 -gapopen 5 -gapextend 2 -query $infile -db blast_dbs/mt_genes/$gene/$gene  | " );
+    # open( BLASTRUN, "blastall -p blastn -d blast_dbs/mt_genes/$gene/$gene -i $infile | " ); # VCRU comment out, use our own blast+ binary, so replace with next line
+    open( BLASTRUN, $blastplusdir."/blastn -word_size 9 -reward 2 -penalty -3 -gapopen 5 -gapextend 2 -query $infile -db ${mitofybinbase}/blast_dbs/mt_genes/$gene/$gene  | " );  # VCRU change
 
     while( <BLASTRUN> ){ #write BLAST output to $blast_data variable
       $blast_data .= $_ ;
@@ -118,8 +128,8 @@ foreach $gene ( @mt_genes ){
     close BLASTOUT and next;
 
   }else{ #all other protein genes
-    # open( BLASTRUN, "blastall -F F -e 50 -p blastx -d blast_dbs/mt_genes/$gene/$gene -i $infile | " );
-    open( BLASTRUN, "blast/blastx -query $infile -db blast_dbs/mt_genes/$gene/$gene  | " );
+    # open( BLASTRUN, "blastall -F F -e 50 -p blastx -d blast_dbs/mt_genes/$gene/$gene -i $infile | " ); # VCRU comment out, use our own blast+ binary, so replace with next line
+    open( BLASTRUN, $blastplusdir."/blastx -query $infile -db ${mitofybinbase}/blast_dbs/mt_genes/$gene/$gene  | " ); # VCRU change
     while( <BLASTRUN> ){ #write BLAST output to $blast_data variable
       $blast_data .= $_ ;
     }
@@ -214,9 +224,13 @@ foreach $gene ( @mt_genes ){
 }
 
 annotate_rna( $infile, $project, $query_taxon, $out_directory, $seqlen, \$file, $RNA_EMAX, $RNA_PMIN, $RNA_MINLEN );
+print "</pre>\n";  # VCRU addition, end of preformatted log output
 print_gene_summary( $project, $query_taxon, $seqlen, \%html_files, \%blast_files, $out_directory, \@missed );
 
-print "\n\n** Open \'$out_directory/$project\_summary.html\' and \'$out_directory/$project\_rna\_summary.html\' in a web browser (preferably Safari) to see results. **\n\n";
+#print "\n\n** Open \'$out_directory/$project\_summary.html\' and \'$out_directory/$project\_rna\_summary.html\' in a web browser (preferably Safari) to see results. **\n\n"; # VCRU comment out, replace with next several lines
+my $sumlink = "/tmp/" . $project . "_out/" . $project . "_summary.html"; # VCRU addition
+my $rnalink = "/tmp/" . $project . "_out/" . $project . "_rna_summary.html"; # VCRU addition
+print "<p><b>Open <a href=\"$sumlink\" target=\"_blank\">Summary</a> and <a href=\"$rnalink\" target=\"_blank\">RNA Summary</a> to see results</b></p>\n"; # VCRU change/addition
 
 close MISSED;
 exit;

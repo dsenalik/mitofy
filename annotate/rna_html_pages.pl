@@ -1,5 +1,7 @@
 use strict;
 use warnings;
+my $mitofybinbase = $ENV{"mitofybinbase"};  # VCRU addition this is where mitofy.pl and other called programs are located
+my $webbase = $ENV{"webbase"};  # VCRU addition this is the URL of the mitofy cgi directory (not used here, only shown for complete list)
 
 #######################################################################################################################
 # called by annotate_rna
@@ -106,8 +108,8 @@ sub rna_output_header{
 
   # for rRNAs
   if( $rna =~ /rrn/ ){
-    # print HTML "<body onLoad=\"window.open(\'http:\/\/127.0.0.1\/cgi-bin\/rrna_make_annotation_form.cgi?gene_name=$gene_name&taxon=$query_taxon&project=$project\',\'mywindow\',\'width=550,height=600,resizable=yes,menubar=no,screenX=0,screenY=0\')\">\n";
-    print HTML "\t\t<td><table><form METHOD=\"GET\"><INPUT TYPE=\"button\" VALUE=\"Annotate\" onClick=\"window.open(\'http:\/\/127.0.0.1\/cgi-bin\/rrna_make_annotation_form.cgi?gene_name=$gene_name&taxon=$query_taxon&project=$project\',\'Sequin_form\',\'width=550,height=600,resizable=yes,menubar=no\')\"><\/form><\/table><\/td>\n";
+    # print HTML "<body onLoad=\"window.open(\'${webbase}rrna_make_annotation_form.cgi?gene_name=$gene_name&taxon=$query_taxon&project=$project\',\'mywindow\',\'width=550,height=600,resizable=yes,menubar=no,scrollbars=1,screenX=0,screenY=0\')\">\n"; # VCRU change, add path $webbase
+    print HTML "\t\t<td><table><form METHOD=\"GET\"><INPUT TYPE=\"button\" VALUE=\"Annotate\" onClick=\"window.open(\'${webbase}rrna_make_annotation_form.cgi?gene_name=$gene_name&taxon=$query_taxon&project=$project\',\'Sequin_form\',\'width=550,height=600,resizable=yes,menubar=no\')\"><\/form><\/table><\/td>\n";  # VCRU change, add path $webbase
     print HTML "\t\t<td><font face=\"Courier\" color=\"blue\" size=\"6\">&nbsp;&nbsp;&nbsp;$gene_name&nbsp;($gene_lengths&nbsp;nt)<\/font><\/td>\n";
     print HTML "\t<\/tr>\n<\/table>\n<br>\n<hr size=4>";
 
@@ -115,7 +117,7 @@ sub rna_output_header{
   }elsif( $rna =~ /fM/i ){
     $rna = "Met";
     my $label = "Met-f";
-    print HTML "\t\t<td><table><form METHOD=\"GET\"><INPUT TYPE=\"button\" VALUE=\"Annotate\" onClick=\"window.open(\'http:\/\/127.0.0.1\/cgi-bin\/trna_make_annotation_form.cgi?gene_name=$gene_name&product=tRNA-$rna&taxon=$query_taxon&project=$project\',\'Sequin_form\',\'width=550,height=550,resizable=yes,menubar=no\')\"><\/form><\/table><\/td>\n";
+    print HTML "\t\t<td><table><form METHOD=\"GET\"><INPUT TYPE=\"button\" VALUE=\"Annotate\" onClick=\"window.open(\'${webbase}trna_make_annotation_form.cgi?gene_name=$gene_name&product=tRNA-$rna&taxon=$query_taxon&project=$project\',\'Sequin_form\',\'width=550,height=550,resizable=yes,menubar=no\')\"><\/form><\/table><\/td>\n"; # VCRU change, add path $webbase
     print HTML "\t\t<td><font face=\"Courier\" color=\"blue\" size=\"6\">&nbsp;&nbsp;&nbsp;$gene_name&nbsp;($gene_lengths&nbsp;nt)<\/font><\/td>\n";
     print HTML "\t<\/tr>\n<\/table>\n<br>\n<hr size=4>";
 
@@ -123,8 +125,8 @@ sub rna_output_header{
   }elsif( $rna eq "Cys-mt" ){
     $rna = "Cys";
     my $product = "tRNA-Cys";
-    # print HTML "<body onLoad=\"window.open(\'http:\/\/127.0.0.1\/cgi-bin\/trnC_make_annotation_form.cgi?gene_name=$gene_name&product=$product&type=mito&taxon=$query_taxon&project=$project\',\'mywindow\',\'width=550,height=600,resizable=yes,menubar=no,screenX=0,screenY=0\')\">\n";
-    print HTML "\t\t<td><table><form METHOD=\"GET\"><INPUT TYPE=\"button\" VALUE=\"Annotate\" onClick=\"window.open(\'http:\/\/127.0.0.1\/cgi-bin\/trnC_make_annotation_form.cgi?gene_name=$gene_name&product=$product&type=mito&taxon=$query_taxon&project=$project\',\'Sequin_form\',\'width=550,height=550,resizable=yes,menubar=no\')\"><\/form><\/table><\/td>\n";
+    # print HTML "<body onLoad=\"window.open(\'${webbase}trnC_make_annotation_form.cgi?gene_name=$gene_name&product=$product&type=mito&taxon=$query_taxon&project=$project\',\'mywindow\',\'width=550,height=600,resizable=yes,menubar=no,scrollbars=1,screenX=0,screenY=0\')\">\n"; # VCRU change, add path $webbase
+    print HTML "\t\t<td><table><form METHOD=\"GET\"><INPUT TYPE=\"button\" VALUE=\"Annotate\" onClick=\"window.open(\'${webbase}trnC_make_annotation_form.cgi?gene_name=$gene_name&product=$product&type=mito&taxon=$query_taxon&project=$project\',\'Sequin_form\',\'width=550,height=550,resizable=yes,menubar=no\')\"><\/form><\/table><\/td>\n"; # VCRU change, add path $webbase
     print HTML "\t\t<td><font face=\"Courier\" color=\"blue\" size=\"6\">&nbsp;&nbsp;&nbsp;$gene_name&nbsp;($gene_lengths&nbsp;nt)<\/font><\/td>\n";
     print HTML "\t<\/tr>\n<\/table>\n<br><br>\n";
 
@@ -132,8 +134,8 @@ sub rna_output_header{
   }elsif( $rna =~ "Cys-bacterial" ){
     $rna = "Cys";
     my $product = "tRNA-Cys";
-    # print HTML "<body onLoad=\"window.open(\'http:\/\/127.0.0.1\/cgi-bin\/trnC_make_annotation_form.cgi?gene_name=$gene_name&product=$product&type=bacterial&taxon=$query_taxon&project=$project\',\'mywindow\',\'width=550,height=600,resizable=yes,menubar=no,screenX=0,screenY=0\')\">\n";
-    print HTML "\t\t<td><table><form METHOD=\"GET\"><INPUT TYPE=\"button\" VALUE=\"Annotate\" onClick=\"window.open(\'http:\/\/127.0.0.1\/cgi-bin\/trnC_make_annotation_form.cgi?gene_name=$gene_name&product=$product&type=bacterial&taxon=$query_taxon&project=$project\',\'Sequin_form\',\'width=550,height=550,resizable=yes,menubar=no\')\"><\/form><\/table><\/td>\n";
+    # print HTML "<body onLoad=\"window.open(\'${webbase}trnC_make_annotation_form.cgi?gene_name=$gene_name&product=$product&type=bacterial&taxon=$query_taxon&project=$project\',\'mywindow\',\'width=550,height=600,resizable=yes,menubar=no,scrollbars=1,screenX=0,screenY=0\')\">\n"; # VCRU change, add path $webbase
+    print HTML "\t\t<td><table><form METHOD=\"GET\"><INPUT TYPE=\"button\" VALUE=\"Annotate\" onClick=\"window.open(\'${webbase}trnC_make_annotation_form.cgi?gene_name=$gene_name&product=$product&type=bacterial&taxon=$query_taxon&project=$project\',\'Sequin_form\',\'width=550,height=550,resizable=yes,menubar=no\')\"><\/form><\/table><\/td>\n"; # VCRU change, add path $webbase
     print HTML "\t\t<td><font face=\"Courier\" color=\"blue\" size=\"6\">&nbsp;&nbsp;&nbsp;$gene_name&nbsp;($gene_lengths&nbsp;nt)<\/font><\/td>\n";
     print HTML "\t<\/tr>\n<\/table>\n<br><br>\n";
 
@@ -141,8 +143,8 @@ sub rna_output_header{
   }elsif( $rna =~ /Cys-cp/ ){
     $rna = "Cys";
     my $product = "tRNA-Cys";
-    # print HTML "<body onLoad=\"window.open(\'http:\/\/127.0.0.1\/cgi-bin\/trnC_make_annotation_form.cgi?gene_name=$gene_name&product=$product&type=cplast&taxon=$query_taxon&project=$project\',\'mywindow\',\'width=550,height=600,resizable=yes,menubar=no,screenX=0,screenY=0\')\">\n";
-    print HTML "\t\t<td><table><form METHOD=\"GET\"><INPUT TYPE=\"button\" VALUE=\"Annotate\" onClick=\"window.open(\'http:\/\/127.0.0.1\/cgi-bin\/trnC_make_annotation_form.cgi?gene_name=$gene_name&product=$product&type=cplast&taxon=$query_taxon&project=$project\',\'Sequin_form\',\'width=550,height=550,resizable=yes,menubar=no\')\"><\/form><\/table><\/td>\n";
+    # print HTML "<body onLoad=\"window.open(\'${webbase}trnC_make_annotation_form.cgi?gene_name=$gene_name&product=$product&type=cplast&taxon=$query_taxon&project=$project\',\'mywindow\',\'width=550,height=600,resizable=yes,menubar=no,scrollbars=1,screenX=0,screenY=0\')\">\n"; # VCRU change, add path $webbase
+    print HTML "\t\t<td><table><form METHOD=\"GET\"><INPUT TYPE=\"button\" VALUE=\"Annotate\" onClick=\"window.open(\'${webbase}trnC_make_annotation_form.cgi?gene_name=$gene_name&product=$product&type=cplast&taxon=$query_taxon&project=$project\',\'Sequin_form\',\'width=550,height=550,resizable=yes,menubar=no\')\"><\/form><\/table><\/td>\n"; # VCRU change, add path $webbase
     print HTML "\t\t<td><font face=\"Courier\" color=\"blue\" size=\"6\">&nbsp;&nbsp;&nbsp;$gene_name&nbsp;($gene_lengths&nbsp;nt)<\/font><\/td>\n";
     print HTML "\t<\/tr>\n<\/table>\n<br><br>\n";
 
@@ -150,14 +152,14 @@ sub rna_output_header{
   }elsif( $rna =~ /(\w+)-cp/ ){
     $rna = $1;
     my $product = "tRNA-" . $1;
-    # print HTML "<body onLoad=\"window.open(\'http:\/\/127.0.0.1\/cgi-bin\/trna_make_annotation_form.cgi?gene_name=$gene_name&product=$product&note=chloroplast-like&taxon=$query_taxon&project=$project&cplast=yes\',\'mywindow\',\'width=550,height=600,resizable=yes,menubar=no,screenX=0,screenY=0\')\">\n";
-    print HTML "\t\t<td><table><form METHOD=\"GET\"><INPUT TYPE=\"button\" VALUE=\"Annotate\" onClick=\"window.open(\'http:\/\/127.0.0.1\/cgi-bin\/trna_make_annotation_form.cgi?gene_name=$gene_name&product=$product&note=chloroplast-like&taxon=$query_taxon&project=$project&cplast=yes\',\'Sequin_form\',\'width=550,height=550,resizable=yes,menubar=no\')\"><\/form><\/table><\/td>\n";
+    # print HTML "<body onLoad=\"window.open(\'${webbase}trna_make_annotation_form.cgi?gene_name=$gene_name&product=$product&note=chloroplast-like&taxon=$query_taxon&project=$project&cplast=yes\',\'mywindow\',\'width=550,height=600,resizable=yes,menubar=no,scrollbars=1,screenX=0,screenY=0\')\">\n"; # VCRU change, add path $webbase
+    print HTML "\t\t<td><table><form METHOD=\"GET\"><INPUT TYPE=\"button\" VALUE=\"Annotate\" onClick=\"window.open(\'${webbase}trna_make_annotation_form.cgi?gene_name=$gene_name&product=$product&note=chloroplast-like&taxon=$query_taxon&project=$project&cplast=yes\',\'Sequin_form\',\'width=550,height=550,resizable=yes,menubar=no\')\"><\/form><\/table><\/td>\n"; # VCRU change, add path $webbase
     print HTML "\t\t<td><font face=\"Courier\" color=\"blue\" size=\"6\">&nbsp;&nbsp;&nbsp;$gene_name&nbsp;($gene_lengths&nbsp;nt)<\/font><\/td>\n";
     print HTML "\t<\/tr>\n<\/table>\n<br><br>\n";
 
   # for non-chloroplast, non-Cys mitochondrial tRNAs
   }else{
-    print HTML "\t\t<td><table><form METHOD=\"GET\"><INPUT TYPE=\"button\" VALUE=\"Annotate\" onClick=\"window.open(\'http:\/\/127.0.0.1\/cgi-bin\/trna_make_annotation_form.cgi?gene_name=$gene_name&product=tRNA-$rna&taxon=$query_taxon&project=$project&cplast=no\',\'Sequin_form\',\'width=550,height=550,resizable=yes,menubar=no\')\"><\/form><\/table><\/td>\n";
+    print HTML "\t\t<td><table><form METHOD=\"GET\"><INPUT TYPE=\"button\" VALUE=\"Annotate\" onClick=\"window.open(\'${webbase}trna_make_annotation_form.cgi?gene_name=$gene_name&product=tRNA-$rna&taxon=$query_taxon&project=$project&cplast=no\',\'Sequin_form\',\'width=550,height=550,resizable=yes,menubar=no\')\"><\/form><\/table><\/td>\n"; # VCRU change, add path $webbase
     print HTML "\t\t<td><font face=\"Courier\" color=\"blue\" size=\"6\">&nbsp;&nbsp;&nbsp;$gene_name&nbsp;($gene_lengths&nbsp;nt)<\/font><\/td>\n";
     print HTML "\t<\/tr>\n<\/table>\n<br><br>\n";
   }
@@ -270,7 +272,7 @@ sub make_framesets{
 
     my $top_frame = make_top_frame( $query_taxon, $AA, $out_directory, $project );
 
-    open( FRAME_TEMPLATE, "frameset.html" ) || die "Couldn't open frameset.html: $!\n";
+    open( FRAME_TEMPLATE, $mitofybinbase."/frameset.html" ) || die "Couldn't open frameset.html: $!\n"; # VCRU change, add path $mitofybinbase
     $frame_file = "$out_directory/$AA" . "_rna_frame.html";
     
     if( $AA eq "Met-f" ){

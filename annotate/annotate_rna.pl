@@ -1,5 +1,7 @@
 use strict;
 use warnings;
+my $mitofybinbase = $ENV{"mitofybinbase"};  # VCRU addition this is where mitofy.pl and other called programs are located
+my $blastplusdir = $ENV{"blastplusdir"};  # VCRU addition this is whre the NCBI blast+ programs are located
 
 #############################################################################
 # main script for annotating RNAs by BLAST; also calls parse_trnascan, which parses
@@ -49,7 +51,7 @@ sub annotate_rna{
 	     );
 
   # open the rna blast db directory to get all rna gene names
-  opendir( DBDIR, "blast_dbs/mt_rna" );
+  opendir( DBDIR, $mitofybinbase."/blast_dbs/mt_rna" ); # VCRU change, add path $mitofybinbase
   my @RNA = readdir( DBDIR );
   closedir DBDIR;
   
@@ -70,8 +72,8 @@ sub annotate_rna{
     print "\t$rna\n";
 
     #run BLAST for current gene
-    # open( BLASTRUN, "blastall -p blastn -F F -d blast_dbs/mt_rna/$rna/$rna -i $infile  | " );
-    open( BLASTRUN, "blast/blastn -query $infile -db blast_dbs/mt_rna/$rna/$rna  | " );
+    # open( BLASTRUN, "blastall -p blastn -F F -d blast_dbs/mt_rna/$rna/$rna -i $infile  | " ); # VCRU comment out, use our own blast+ binary, so replace with next line 
+    open( BLASTRUN, $blastplusdir."/blastn -query $infile -db ${mitofybinbase}/blast_dbs/mt_rna/$rna/$rna  | " );  # VCRU change
 
     while( <BLASTRUN> ){ #write BLAST output to $blast_data variable
       $blast_data .= $_ ;

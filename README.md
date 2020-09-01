@@ -21,13 +21,14 @@ https://www.vcru.wisc.edu/cgi-bin/mitofy/mitofy.cgi
 
 ## Dependencies
 
-The original mitofy came with MacOS version of tRNAscan-SE and blast+.
-These are not included in this project, and will need to be installed,
-along with 
+The original mitofy came with MacOS versions of tRNAscan-SE and blast+.
+These are not included in this project, and will need to be installed.
+Dependencies are:
 
 * tRNAscan-SE - http://lowelab.ucsc.edu/tRNAscan-SE/
 * NCBI blast+ - http://blast.ncbi.nlm.nih.gov/Blast.cgi?CMD=Web&PAGE_TYPE=BlastDocs&DOC_TYPE=Download
 * zip - should be included with any linux distribution
+* apache2 web server
 
 ## Installation
 

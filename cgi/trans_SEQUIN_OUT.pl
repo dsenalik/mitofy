@@ -32,6 +32,7 @@ my $notes       = param('notes' );
 my $pseudo      = param('pseudo' );
 my $sequin_outfile = $project . ".tbl";
 my $outfile_path   = "cgi_out/"; #DIRECTORY
+   $outfile_path = "/var/www/html/tmp/${project}_out/";  # VCRU change this is where output files are stored
 
 #for transl_except
 my $te_1s  = param('te_1s');

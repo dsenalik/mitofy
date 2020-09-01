@@ -1,0 +1,727 @@
+BLASTN 2.2.18 [Mar-02-2008]
+
+
+Reference: Altschul, Stephen F., Thomas L. Madden, Alejandro A. Schaffer, 
+Jinghui Zhang, Zheng Zhang, Webb Miller, and David J. Lipman (1997), 
+"Gapped BLAST and PSI-BLAST: a new generation of protein database search
+programs",  Nucleic Acids Res. 25:3389-3402.
+
+Query= Mimulus_guttatus.269859034
+         (489 letters)
+
+Database: mt_all 
+           20 sequences; 10,372,162 total letters
+
+Searching..................................................done
+
+
+
+                                                                 Score    E
+Sequences producing significant alignments:                      (bits) Value
+
+Nicotiana                                                             457   e-129
+Carica                                                                453   e-128
+Citrullus                                                             453   e-127
+Vitis                                                                 431   e-121
+Cucurbita                                                             430   e-121
+Oryza_japonica                                                        369   e-102
+Oryza_indica                                                          369   e-102
+Solanum                                                               359   2e-99
+Cycas                                                                 260   1e-69
+Brassica                                                              134   1e-31
+Tripsacum                                                              71   1e-12
+Triticum                                                               39   0.009
+Sorghum                                                                31   2.3  
+Zea_perennis                                                           30   2.6  
+Zea_mays_parviglumis                                                   30   2.6  
+Zea_mays_mays                                                          30   2.6  
+Zea_luxurians                                                          30   2.6  
+
+>Nicotiana
+          Length = 430597
+
+ Score =  457 bits (2148), Expect = e-129
+ Identities = 444/462 (96%)
+ Strand = Plus / Minus
+
+                                                                          
+Query: 1      atgccattcggaagaagtattctacagaagaaaagcctgttacgagtaagtggagaagaa 60
+              |||||||||||||||||| ||||||||||||||||||||||||||||||||||||| |||
+Sbjct: 360762 atgccattcggaagaagtcttctacagaagaaaagcctgttacgagtaagtggagaggaa 360703
+
+                                                                          
+Query: 61     agatctacagagattcttatctcattccattccagtggctcaaccagtaaccaatggcga 120
+              |||||| ||| |||||||||||||||||||||||||||||||||||||||||||||||||
+Sbjct: 360702 agatctccagggattcttatctcattccattccagtggctcaaccagtaaccaatggcga 360643
+
+                                                                          
+Query: 121    aaactcaaaaatccatggtttcccggtagaaccctatttcgcccaagttgtttcggaacc 180
+              ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Sbjct: 360642 aaactcaaaaatccatggtttcccggtagaaccctatttcgcccaagttgtttcggaacc 360583
+
+                                                                          
+Query: 181    ggaaaaaagaagcggtttttcgcacagcttgctcatagtgcaggtcccacttgtatattg 240
+              |||||||||||||||||||||||||||||||||||||||||||||||||||||||||| |
+Sbjct: 360582 ggaaaaaagaagcggtttttcgcacagcttgctcatagtgcaggtcccacttgtatatcg 360523
+
+                                                                          
+Query: 241    tatttggccgaagaagcatcagacaggttggagttcttaccttcttgggactccatggac 300
+              |||||||||||||||||||| |||||||||||||||||||||||||||||||||||||||
+Sbjct: 360522 tatttggccgaagaagcatcggacaggttggagttcttaccttcttgggactccatggac 360463
+
+                                                                          
+Query: 301    caagatcttcttttattatatggtcaataccgatccactttagcagatcatatggatgta 360
+              |||||||| |||||||||||||||||||||||||| ||||||| ||||||||||||||||
+Sbjct: 360462 caagatctgcttttattatatggtcaataccgatctactttagtagatcatatggatgta 360403
+
+                                                                          
+Query: 361    gaaaaagcttcacattttaatgaattggaaacatctcttttccatttctatttacccagt 420
+              |||||||||||  ||||  ||||| | |||||||||||||||||||||||||||||||||
+Sbjct: 360402 gaaaaagcttctaatttggatgaaatagaaacatctcttttccatttctatttacccagt 360343
+
+                                                        
+Query: 421    tcatatctttcttttgtgtgttcccgggaggaattcgatctc 462
+              |||||||||| ||| ||||||||| |||||||||||||||||
+Sbjct: 360342 tcatatctttgtttcgtgtgttcctgggaggaattcgatctc 360301
+
+
+>Carica
+          Length = 476890
+
+ Score =  453 bits (2132), Expect = e-128
+ Identities = 456/489 (93%), Gaps = 4/489 (0%)
+ Strand = Plus / Plus
+
+                                                                          
+Query: 1      atgccattcggaagaagtattctacagaagaaaagcctgttacgagtaagtggagaagaa 60
+              |||||||||||||||||| ||||||||| | |||||||||  |||||||||||||| |||
+Sbjct: 401684 atgccattcggaagaagtcttctacagagggaaagcctgtatcgagtaagtggagaggaa 401743
+
+                                                                          
+Query: 61     agatctacagagattcttatctcattccattccagtggctcaaccagtaaccaatggcga 120
+              |||||| ||||||||||||||| |||||||||||||||||| ||||||||||||||||||
+Sbjct: 401744 agatctccagagattcttatcttattccattccagtggctcgaccagtaaccaatggcga 401803
+
+                                                                          
+Query: 121    aaactcaaaaatccatggtttcccggtagaaccctatttcgcccaagttgtttcggaacc 180
+              ||||| |||||||||||||||||||||||||||| |||||||||||||||||||||||||
+Sbjct: 401804 aaactgaaaaatccatggtttcccggtagaaccccatttcgcccaagttgtttcggaacc 401863
+
+                                                                          
+Query: 181    ggaaaaaagaagcggtttttcgcacagcttgctcatagtgcaggtcccacttgtatattg 240
+              |||||||||||||||||||||||||||||||||||||||||||||||||||||||||| |
+Sbjct: 401864 ggaaaaaagaagcggtttttcgcacagcttgctcatagtgcaggtcccacttgtatatcg 401923
+
+                                                                          
+Query: 241    tatttggccgaagaagcatcagacaggttggagttcttaccttcttgggactccatggac 300
+              |||||||||||||||||||| ||||||||||||||||| ||||||| |||||||||||||
+Sbjct: 401924 tatttggccgaagaagcatcggacaggttggagttcttgccttctttggactccatggac 401983
+
+                                                                          
+Query: 301    caagatcttcttttattatatggtcaataccgatccactttagcagatcatatggatgta 360
+              |||||||| |||| ||||||||| ||||||||||| |||||||  |||||||||||||||
+Sbjct: 401984 caagatctgctttcattatatgggcaataccgatctactttagtggatcatatggatgta 402043
+
+                                                                          
+Query: 361    gaaaaagcttcacattttaatgaattggaaacatctcttttccatttctatttacccagt 420
+              |||||||||||   |||| ||||||||||||||||||||||||||||||||||||| |||
+Sbjct: 402044 gaaaaagcttcttcttttgatgaattggaaacatctcttttccatttctatttacctagt 402103
+
+                                                                          
+Query: 421    tcatatctttcttttgtgtgttcccgggaggaattcgatctcttcaatcaatctcggaat 480
+              |||||||||| ||| ||||||||||||||||||||||||||||    |||||||||| ||
+Sbjct: 402104 tcatatctttgtttcgtgtgttcccgggaggaattcgatctct----tcaatctcgggat 402159
+
+                       
+Query: 481    accacctaa 489
+              |||||||||
+Sbjct: 402160 accacctaa 402168
+
+
+>Citrullus
+          Length = 379236
+
+ Score =  453 bits (2130), Expect = e-127
+ Identities = 442/462 (95%)
+ Strand = Plus / Minus
+
+                                                                          
+Query: 1      atgccattcggaagaagtattctacagaagaaaagcctgttacgagtaagtggagaagaa 60
+              |||||||||||||||||| ||||||||| | ||||||||||||||||||||||||| |||
+Sbjct: 231536 atgccattcggaagaagtcttctacagagggaaagcctgttacgagtaagtggagaggaa 231477
+
+                                                                          
+Query: 61     agatctacagagattcttatctcattccattccagtggctcaaccagtaaccaatggcga 120
+              |||||| |||||||||||||||||||||||||||||||||| ||||||||||||||||||
+Sbjct: 231476 agatctccagagattcttatctcattccattccagtggctcgaccagtaaccaatggcga 231417
+
+                                                                          
+Query: 121    aaactcaaaaatccatggtttcccggtagaaccctatttcgcccaagttgtttcggaacc 180
+              |||||||||||||||||||||||||||||||||| ||||||||||||||||| || ||||
+Sbjct: 231416 aaactcaaaaatccatggtttcccggtagaaccccatttcgcccaagttgttgcgaaacc 231357
+
+                                                                          
+Query: 181    ggaaaaaagaagcggtttttcgcacagcttgctcatagtgcaggtcccacttgtatattg 240
+              ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Sbjct: 231356 ggaaaaaagaagcggtttttcgcacagcttgctcatagtgcaggtcccacttgtatattg 231297
+
+                                                                          
+Query: 241    tatttggccgaagaagcatcagacaggttggagttcttaccttcttgggactccatggac 300
+              |||||||||||||||||||| |||||||||||||||||||||||||||||||| ||||||
+Sbjct: 231296 tatttggccgaagaagcatcggacaggttggagttcttaccttcttgggactctatggac 231237
+
+                                                                          
+Query: 301    caagatcttcttttattatatggtcaataccgatccactttagcagatcatatggatgta 360
+              |||||||| |||| ||||||||| ||||||||||| ||||||| ||||||||||||||||
+Sbjct: 231236 caagatctgctttcattatatgggcaataccgatcgactttagtagatcatatggatgta 231177
+
+                                                                          
+Query: 361    gaaaaagcttcacattttaatgaattggaaacatctcttttccatttctatttacccagt 420
+              |||||||||||  |||| ||||||||||||||||||||||||||||||||||||||||||
+Sbjct: 231176 gaaaaagcttcggatttgaatgaattggaaacatctcttttccatttctatttacccagt 231117
+
+                                                        
+Query: 421    tcatatctttcttttgtgtgttcccgggaggaattcgatctc 462
+              |||||||||||||| |||||||||||||||||||||||||||
+Sbjct: 231116 tcatatctttctttcgtgtgttcccgggaggaattcgatctc 231075
+
+
+
+ Score = 30.2 bits (121), Expect = 3.0
+ Identities = 29/35 (82%)
+ Strand = Plus / Minus
+
+                                                 
+Query: 351    tatggatgtagaaaaagcttcacattttaatgaat 385
+              | ||||||||||||||||||   |||| |||| ||
+Sbjct: 338752 tgtggatgtagaaaaagcttgggatttgaatgcat 338718
+
+
+>Vitis
+          Length = 773279
+
+ Score =  431 bits (2027), Expect = e-121
+ Identities = 447/489 (91%), Gaps = 12/489 (2%)
+ Strand = Plus / Minus
+
+                                                                          
+Query: 1      atgccattcggaagaagtattctacagaagaaaagcctgttacgagtaagtggagaagaa 60
+              |||||||||||||||||| ||||||||| | ||||||||||||||||||||||||| |||
+Sbjct: 156298 atgccattcggaagaagtcttctacagagggaaagcctgttacgagtaagtggagaggaa 156239
+
+                                                                          
+Query: 61     agatctacagagattcttatctcattccattccagtggctcaaccagtaaccaatggcga 120
+               ||||  ||||||||||||||||||||||||| |||||||| ||||||||||||||||||
+Sbjct: 156238 ggatccccagagattcttatctcattccattctagtggctcgaccagtaaccaatggcga 156179
+
+                                                                          
+Query: 121    aaactcaaaaatccatggtttcccggtagaaccctatttcgcccaagttgtttcggaacc 180
+              |||||||||||||||||||||||||||||||||| ||||||||||||||||| |||||||
+Sbjct: 156178 aaactcaaaaatccatggtttcccggtagaaccccatttcgcccaagttgttgcggaacc 156119
+
+                                                                          
+Query: 181    ggaaaaaagaagcggtttttcgcacagcttgctcatagtgcaggtcccacttgtatattg 240
+              |||||||||||||||||||||||||||||||||||||||||||||||||||||||| | |
+Sbjct: 156118 ggaaaaaagaagcggtttttcgcacagcttgctcatagtgcaggtcccacttgtatttcg 156059
+
+                                                                          
+Query: 241    tatttggccgaagaagcatcagacaggttggagttcttaccttcttgggactccatggac 300
+              |||||||||||||||||||| ||||||||||||||| ||| |||||||||||||||||||
+Sbjct: 156058 tatttggccgaagaagcatcggacaggttggagttcctacgttcttgggactccatggac 155999
+
+                                                                          
+Query: 301    caagatcttcttttattatatggtcaataccgatccactttagcagatcatatggatgta 360
+              |||||||| |||| ||||||||| ||||||||||| ||||||| ||||||||||||||||
+Sbjct: 155998 caagatctgctttcattatatgggcaataccgatctactttagtagatcatatggatgta 155939
+
+                                                                          
+Query: 361    gaaaaagcttcacattttaatgaattggaaacatctcttttccatttctatttacccagt 420
+              ||||||||||  |||||| ||||||||||||||||||||||||||||  |||||||||||
+Sbjct: 155938 gaaaaagcttttcattttgatgaattggaaacatctcttttccattttgatttacccagt 155879
+
+                                                                          
+Query: 421    tcatatctttcttttgtgtgttcccgggaggaattcgatctcttcaatcaatctcggaat 480
+              | |||||||| ||| ||||||||||||||||||      ||      |||||||||| ||
+Sbjct: 155878 ttatatctttgtttcgtgtgttcccgggaggaa------ct------tcaatctcgggat 155831
+
+                       
+Query: 481    accacctaa 489
+              |||||||||
+Sbjct: 155830 accacctaa 155822
+
+
+
+ Score = 51.0 bits (220), Expect = 2e-06
+ Identities = 48/53 (90%)
+ Strand = Plus / Plus
+
+                                                                   
+Query: 1      atgccattcggaagaagtattctacagaagaaaagcctgttacgagtaagtgg 53
+              |||||||| ||||||||| ||||||||| | ||||||||||||||||||| ||
+Sbjct: 518050 atgccatttggaagaagtcttctacagagggaaagcctgttacgagtaagggg 518102
+
+
+
+ Score = 28.5 bits (113), Expect = 9.7
+ Identities = 33/46 (71%)
+ Strand = Plus / Plus
+
+                                                            
+Query: 375    ttttaatgaattggaaacatctcttttccatttctatttacccagt 420
+              |||| |  | |||  | | || |||  || ||||||| ||||||||
+Sbjct: 216301 tttttagtacttgttagcgtcccttccccctttctatgtacccagt 216346
+
+
+>Cucurbita
+          Length = 982833
+
+ Score =  430 bits (2023), Expect = e-121
+ Identities = 445/489 (91%), Gaps = 9/489 (1%)
+ Strand = Plus / Minus
+
+                                                                          
+Query: 1      atgccattcggaagaagtattctacagaagaaaagcctgttacgagtaagtggagaagaa 60
+              |||||||||||||   || ||||||||| | ||||||||||||||||||||||||| |||
+Sbjct: 841433 atgccattcggaatccgtcttctacagagggaaagcctgttacgagtaagtggagaggaa 841374
+
+                                                                          
+Query: 61     agatctacagagattcttatctcattccattccagtggctcaaccagtaaccaatggcga 120
+              |||||| |||||||||| ||||||||||||||||||||||| ||||||||||||||||| 
+Sbjct: 841373 agatctccagagattctgatctcattccattccagtggctcgaccagtaaccaatggcgc 841314
+
+                                                                          
+Query: 121    aaactcaaaaatccatggtttcccggtagaaccctatttcgcccaagttgtttcggaacc 180
+              |||||||||||||| ||||||||||||||||||| |||| |||||||||||| || | ||
+Sbjct: 841313 aaactcaaaaatccctggtttcccggtagaaccccatttggcccaagttgttgcgaaccc 841254
+
+                                                                          
+Query: 181    ggaaaaaagaagcggtttttcgcacagcttgctcatagtgcaggtcccacttgtatattg 240
+              || |||||  ||||||||||||||||||||||||||||||||||||||||||||||||||
+Sbjct: 841253 ggcaaaaatcagcggtttttcgcacagcttgctcatagtgcaggtcccacttgtatattg 841194
+
+                                                                          
+Query: 241    tatttggccgaagaagcatcagacaggttggagttcttaccttcttgggactccatggac 300
+              |||||||||||||||||||| |||||||||||||| ||||||||||||||||| || |||
+Sbjct: 841193 tatttggccgaagaagcatcggacaggttggagttattaccttcttgggactctatagac 841134
+
+                                                                          
+Query: 301    caagatcttcttttattatatggtcaataccgatccactttagcagatcatatggatgta 360
+              |||||||| |||| ||||||||| ||||||||||| ||||||| ||||||||||||||||
+Sbjct: 841133 caagatctgctttcattatatgggcaataccgatcgactttagtagatcatatggatgta 841074
+
+                                                                          
+Query: 361    gaaaaagcttcacattttaatgaattggaaacatctcttttccatttctatttacccagt 420
+              |||||||||||  |||| ||||||||||||||||||||||||||||||||||||||||||
+Sbjct: 841073 gaaaaagcttcggatttgaatgaattggaaacatctcttttccatttctatttacccagt 841014
+
+                                                                          
+Query: 421    tcatatctttcttttgtgtgttcccgggaggaattcgatctcttcaatcaatctcggaat 480
+              |||||||||||||| ||||||||||||||||||||| ||||         ||||||| ||
+Sbjct: 841013 tcatatctttctttcgtgtgttcccgggaggaattccatct---------atctcgggat 840963
+
+                       
+Query: 481    accacctaa 489
+              |||||||||
+Sbjct: 840962 accacctaa 840954
+
+
+>Oryza_japonica
+          Length = 491515
+
+ Score =  369 bits (1734), Expect = e-102
+ Identities = 408/465 (87%), Gaps = 19/465 (4%)
+ Strand = Plus / Minus
+
+                                                                          
+Query: 1      atgccattcggaagaagtattctacagaagaaaagcctgttacgagtaagtggagaagaa 60
+              |||||||||||||||||| || |||||| | ||||||||||||||||||||||||| |||
+Sbjct: 198476 atgccattcggaagaagtcttatacagagggaaagcctgttacgagtaagtggagaggaa 198417
+
+                                                                          
+Query: 61     agatctacagagattcttatctcattccattccagtggctcaaccagtaaccaatggcga 120
+              |||||| ||||||||||||||           ||||||||| |||||||||||| | |||
+Sbjct: 198416 agatctccagagattcttatc-----------cagtggctcgaccagtaaccaaggtcga 198368
+
+                                                                          
+Query: 121    aaactcaaaaatccatggtttcccggtagaaccctatttcgcccaagttgtttcggaacc 180
+              |||||| |    |||||||||||||||||||||| ||||||||||||||||| |||||||
+Sbjct: 198367 aaactcga----ccatggtttcccggtagaaccccatttcgcccaagttgttgcggaacc 198312
+
+                                                                          
+Query: 181    ggaaaaaagaagcggtttttcgcacagcttgctcatagtgcaggtcccacttgtatattg 240
+              ||||||| ||||||||||||||| |||||||||||| |||| |||||||||| | |||| 
+Sbjct: 198311 ggaaaaa-gaagcggtttttcgcgcagcttgctcattgtgctggtcccacttttctatt- 198254
+
+                                                                          
+Query: 241    tatttggccgaagaagcatcagacaggttggagttcttaccttcttgggactccatggac 300
+              |||||||||||| ||||||| |||||||||||||||  ||||||||||||||||||||||
+Sbjct: 198253 tatttggccgaaaaagcatcggacaggttggagttccaaccttcttgggactccatggac 198194
+
+                                                                          
+Query: 301    caagatcttcttttattatatggtcaataccgatccactttagcagatcatatggatgta 360
+              |||||||| |||| ||||||||| ||||||| ||| |||  || ||||||||||||||||
+Sbjct: 198193 caagatctgctttcattatatgggcaataccaatctactaaagtagatcatatggatgta 198134
+
+                                                                          
+Query: 361    gaaaaagcttcacattt--taatgaattggaaacatctcttttccatttctatttaccca 418
+              |||||||||| | ||||  | ||||||||||||||||||||||||||||||||||||| |
+Sbjct: 198133 gaaaaagctttagattttgtgatgaattggaaacatctcttttccatttctatttaccta 198074
+
+                                                           
+Query: 419    gttcatatctttcttttgtgtgttcccgggaggaattcgatctct 463
+              |||||||| ||| ||| |||||||| |||||||||||| ||||||
+Sbjct: 198073 gttcatatttttgtttcgtgtgttctcgggaggaattctatctct 198029
+
+
+
+ Score = 28.5 bits (113), Expect = 9.7
+ Identities = 29/37 (78%)
+ Strand = Plus / Plus
+
+                                                   
+Query: 179    ccggaaaaaagaagcggtttttcgcacagcttgctca 215
+              ||| ||||||||||||| | ||| ||| |||   |||
+Sbjct: 173784 ccgcaaaaaagaagcggctcttcccacggctctgtca 173820
+
+
+>Oryza_indica
+          Length = 491515
+
+ Score =  369 bits (1734), Expect = e-102
+ Identities = 408/465 (87%), Gaps = 19/465 (4%)
+ Strand = Plus / Minus
+
+                                                                          
+Query: 1      atgccattcggaagaagtattctacagaagaaaagcctgttacgagtaagtggagaagaa 60
+              |||||||||||||||||| || |||||| | ||||||||||||||||||||||||| |||
+Sbjct: 198476 atgccattcggaagaagtcttatacagagggaaagcctgttacgagtaagtggagaggaa 198417
+
+                                                                          
+Query: 61     agatctacagagattcttatctcattccattccagtggctcaaccagtaaccaatggcga 120
+              |||||| ||||||||||||||           ||||||||| |||||||||||| | |||
+Sbjct: 198416 agatctccagagattcttatc-----------cagtggctcgaccagtaaccaaggtcga 198368
+
+                                                                          
+Query: 121    aaactcaaaaatccatggtttcccggtagaaccctatttcgcccaagttgtttcggaacc 180
+              |||||| |    |||||||||||||||||||||| ||||||||||||||||| |||||||
+Sbjct: 198367 aaactcga----ccatggtttcccggtagaaccccatttcgcccaagttgttgcggaacc 198312
+
+                                                                          
+Query: 181    ggaaaaaagaagcggtttttcgcacagcttgctcatagtgcaggtcccacttgtatattg 240
+              ||||||| ||||||||||||||| |||||||||||| |||| |||||||||| | |||| 
+Sbjct: 198311 ggaaaaa-gaagcggtttttcgcgcagcttgctcattgtgctggtcccacttttctatt- 198254
+
+                                                                          
+Query: 241    tatttggccgaagaagcatcagacaggttggagttcttaccttcttgggactccatggac 300
+              |||||||||||| ||||||| |||||||||||||||  ||||||||||||||||||||||
+Sbjct: 198253 tatttggccgaaaaagcatcggacaggttggagttccaaccttcttgggactccatggac 198194
+
+                                                                          
+Query: 301    caagatcttcttttattatatggtcaataccgatccactttagcagatcatatggatgta 360
+              |||||||| |||| ||||||||| ||||||| ||| |||  || ||||||||||||||||
+Sbjct: 198193 caagatctgctttcattatatgggcaataccaatctactaaagtagatcatatggatgta 198134
+
+                                                                          
+Query: 361    gaaaaagcttcacattt--taatgaattggaaacatctcttttccatttctatttaccca 418
+              |||||||||| | ||||  | ||||||||||||||||||||||||||||||||||||| |
+Sbjct: 198133 gaaaaagctttagattttgtgatgaattggaaacatctcttttccatttctatttaccta 198074
+
+                                                           
+Query: 419    gttcatatctttcttttgtgtgttcccgggaggaattcgatctct 463
+              |||||||| ||| ||| |||||||| |||||||||||| ||||||
+Sbjct: 198073 gttcatatttttgtttcgtgtgttctcgggaggaattctatctct 198029
+
+
+
+ Score = 28.5 bits (113), Expect = 9.7
+ Identities = 29/37 (78%)
+ Strand = Plus / Plus
+
+                                                   
+Query: 179    ccggaaaaaagaagcggtttttcgcacagcttgctca 215
+              ||| ||||||||||||| | ||| ||| |||   |||
+Sbjct: 173784 ccgcaaaaaagaagcggctcttcccacggctctgtca 173820
+
+
+>Solanum
+          Length = 487585
+
+ Score =  359 bits (1684), Expect = 2e-99
+ Identities = 345/362 (95%)
+ Strand = Plus / Minus
+
+                                                                          
+Query: 1      atgccattcggaagaagtattctacagaagaaaagcctgttacgagtaagtggagaagaa 60
+              |||||||||||||||||| ||||||||||||||||||||||||||||||||||||| |||
+Sbjct: 430703 atgccattcggaagaagtcttctacagaagaaaagcctgttacgagtaagtggagaggaa 430644
+
+                                                                          
+Query: 61     agatctacagagattcttatctcattccattccagtggctcaaccagtaaccaatggcga 120
+              |||||| |||||||||||||||||||||||||||||||||||||||||||||||||||||
+Sbjct: 430643 agatctccagagattcttatctcattccattccagtggctcaaccagtaaccaatggcga 430584
+
+                                                                          
+Query: 121    aaactcaaaaatccatggtttcccggtagaaccctatttcgcccaagttgtttcggaacc 180
+              ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Sbjct: 430583 aaactcaaaaatccatggtttcccggtagaaccctatttcgcccaagttgtttcggaacc 430524
+
+                                                                          
+Query: 181    ggaaaaaagaagcggtttttcgcacagcttgctcatagtgcaggtcccacttgtatattg 240
+              |||||||||||||||||||||||||||||||||||||||||||||||||||||||||| |
+Sbjct: 430523 ggaaaaaagaagcggtttttcgcacagcttgctcatagtgcaggtcccacttgtatatcg 430464
+
+                                                                          
+Query: 241    tatttggccgaagaagcatcagacaggttggagttcttaccttcttgggactccatggac 300
+              |||||||||||| ||||||| ||||||||||||||||||||||||||||  |||||||| 
+Sbjct: 430463 tatttggccgaanaagcatcggacaggttggagttcttaccttcttgggnntccatggan 430404
+
+                                                                          
+Query: 301    caagatcttcttttattatatggtcaataccgatccactttagcagatcatatggatgta 360
+              |||||||| |||||||||||||| ||||||||||| ||||||| | |||||||||| | |
+Sbjct: 430403 caagatctgcttttattatatggncaataccgatctactttagtanatcatatggangna 430344
+
+                
+Query: 361    ga 362
+               |
+Sbjct: 430343 na 430342
+
+
+>Cycas
+          Length = 414903
+
+ Score =  260 bits (1215), Expect = 1e-69
+ Identities = 391/510 (76%), Gaps = 72/510 (14%)
+ Strand = Plus / Plus
+
+                                                                         
+Query: 1     atgccattcggaagaagtattctacagaagaaaagcctgttacgagtaagtggagaagaa 60
+             | ||||||||||||||||||||||| ||  |||| ||       || |  | ||||||| 
+Sbjct: 48332 acgccattcggaagaagtattctacggagtaaaaccc-------aggacatcgagaagat 48384
+
+                                                                         
+Query: 61    agatctacagagattcttatctcattccattccagtggctcaaccagtaaccaatggcga 120
+              | ||| ||||||||||||||| |||||||||||||||||  ||||||||||||||||||
+Sbjct: 48385 -g-tctccagagattcttatcttattccattccagtggcttgaccagtaaccaatggcga 48442
+
+                                                                         
+Query: 121   aaactcaaaaatccatggtttcccggtagaaccctatttcgcccaagtt---gtttcg-- 175
+             ||||| |||| |  |||||||||||||||||| |||||||| |||||||   |   ||  
+Sbjct: 48443 aaactgaaaactttatggtttcccggtagaactctatttcgaccaagttgcagaaccgac 48502
+
+                                                                         
+Query: 176   ------gaac---cgga---aaa-aagaagc------ggtttttcgcacagcttgctcat 216
+                   ||||    |||   ||| |||||||      ||||||| |||||||||||||||
+Sbjct: 48503 gacggcgaactaatggatagaaagaagaagcaaggttggttttttgcacagcttgctcat 48562
+
+                                                                         
+Query: 217   agtgcaggtcccacttgtatattgtatttggccgaagaagca-----------tcagaca 265
+             |||||||||||||||||| ||||||||||| |||||||||||           | ||| |
+Sbjct: 48563 agtgcaggtcccacttgtctattgtatttgaccgaagaagcaccgggcaatattaagaga 48622
+
+                                                                         
+Query: 266   -gg---t---------------tggagttcttaccttcttgggactccatggaccaagat 306
+              ||   |               |||||||  |||||||||||||||||||| ||||| ||
+Sbjct: 48623 tggcactacgtttctatatatatggagtttctaccttcttgggactccatgaaccaaaat 48682
+
+                                                                         
+Query: 307   cttcttttattatatggtcaataccgatccactttagcagatcatatggatgtagaaaaa 366
+             ||||||||||||||||| ||||||| ||| ||||||| ||||||||||||||||||||||
+Sbjct: 48683 cttcttttattatatgggcaataccaatctactttagtagatcatatggatgtagaaaaa 48742
+
+                                                                         
+Query: 367   gcttcacattt-------taat--gaattggaaacatctcttttccatttctatttaccc 417
+             |||||  ||||        |||  | ||||||||||| | ||||||||||| ||||||||
+Sbjct: 48743 gcttctgatttggaaaacgaatcgggattggaaacatttattttccatttccatttaccc 48802
+
+                                           
+Query: 418   agttcatatctttcttttgtgtgttcccgg 447
+             ||||||||||||| ||| |||||||||| |
+Sbjct: 48803 agttcatatctttgtttcgtgtgttccccg 48832
+
+
+>Brassica
+          Length = 221853
+
+ Score =  134 bits (616), Expect = 1e-31
+ Identities = 136/152 (89%)
+ Strand = Plus / Minus
+
+                                                                          
+Query: 1      atgccattcggaagaagtattctacagaagaaaagcctgttacgagtaagtggagaagaa 60
+              |||||||||||||||||| ||||||||| | |||||||||  |||||||||||||| |||
+Sbjct: 219858 atgccattcggaagaagtcttctacagagggaaagcctgtatcgagtaagtggagaggaa 219799
+
+                                                                          
+Query: 61     agatctacagagattcttatctcattccattccagtggctcaaccagtaaccaatggcga 120
+              |||||  | |||||||| || | |||||||||||||||||| ||||||||||||||| ||
+Sbjct: 219798 agatccccggagattctgatattattccattccagtggctcgaccagtaaccaatggaga 219739
+
+                                              
+Query: 121    aaactcaaaaatccatggtttcccggtagaac 152
+              |||||||||||||| | |||||||||||||||
+Sbjct: 219738 aaactcaaaaatcctttgtttcccggtagaac 219707
+
+
+>Tripsacum
+          Length = 704100
+
+ Score = 71.2 bits (316), Expect = 1e-12
+ Identities = 78/89 (87%), Gaps = 3/89 (3%)
+ Strand = Plus / Minus
+
+                                                                          
+Query: 187    aagaagcggtttttcgcacagcttgctcatagtgcaggtccc-acttgtatattgtattt 245
+              ||||||||||||||||||||||||||||||||||| |||||| ||||  ||||| |||||
+Sbjct: 384016 aagaagcggtttttcgcacagcttgctcatagtgcgggtcccaactttgatattttattt 383957
+
+                                           
+Query: 246    ggccgaagaag-catcagacaggttggag 273
+              ||||||||||| | ||  |  ||||||||
+Sbjct: 383956 ggccgaagaagtcgtc-catcggttggag 383929
+
+
+
+ Score = 30.4 bits (122), Expect = 2.6
+ Identities = 30/37 (81%)
+ Strand = Plus / Minus
+
+                                                  
+Query: 179   ccggaaaaaagaagcggtttttcgcacagcttgctca 215
+             ||| ||||||||||||| ||||| ||| |||   |||
+Sbjct: 41789 ccgcaaaaaagaagcggcttttcccacggctctgtca 41753
+
+
+>Triticum
+          Length = 452528
+
+ Score = 38.6 bits (161), Expect = 0.009
+ Identities = 41/52 (78%)
+ Strand = Plus / Plus
+
+                                                                  
+Query: 381    tgaattggaaacatctcttttccatttctatttacccagttcatatctttct 432
+              | |||||||||||||||||||| ||||  ||||  ||||| | |  |||| |
+Sbjct: 115782 ttaattggaaacatctcttttctatttagattttgccagtgcctccctttgt 115833
+
+
+
+ Score = 28.5 bits (113), Expect = 9.7
+ Identities = 29/37 (78%)
+ Strand = Plus / Minus
+
+                                                  
+Query: 179   ccggaaaaaagaagcggtttttcgcacagcttgctca 215
+             ||| ||||||||||||| | ||| ||| |||   |||
+Sbjct: 92235 ccgcaaaaaagaagcggctcttcccacggctctgtca 92199
+
+
+>Sorghum
+          Length = 468628
+
+ Score = 30.6 bits (123), Expect = 2.3
+ Identities = 27/30 (90%)
+ Strand = Plus / Plus
+
+                                            
+Query: 381    tgaattggaaacatctcttttccatttcta 410
+              | ||||||||||||||||||||||| | ||
+Sbjct: 393283 ttaattggaaacatctcttttccatctata 393312
+
+
+
+ Score = 30.4 bits (122), Expect = 2.6
+ Identities = 30/37 (81%)
+ Strand = Plus / Minus
+
+                                                   
+Query: 179    ccggaaaaaagaagcggtttttcgcacagcttgctca 215
+              ||| ||||||||||||| ||||| ||| |||   |||
+Sbjct: 397620 ccgcaaaaaagaagcggcttttcccacggctctgtca 397584
+
+
+>Zea_perennis
+          Length = 570354
+
+ Score = 30.4 bits (122), Expect = 2.6
+ Identities = 30/37 (81%)
+ Strand = Plus / Minus
+
+                                                   
+Query: 179    ccggaaaaaagaagcggtttttcgcacagcttgctca 215
+              ||| ||||||||||||| ||||| ||| |||   |||
+Sbjct: 368271 ccgcaaaaaagaagcggcttttcccacggctctgtca 368235
+
+
+>Zea_mays_parviglumis
+          Length = 680603
+
+ Score = 30.4 bits (122), Expect = 2.6
+ Identities = 30/37 (81%)
+ Strand = Plus / Plus
+
+                                                   
+Query: 179    ccggaaaaaagaagcggtttttcgcacagcttgctca 215
+              ||| ||||||||||||| ||||| ||| |||   |||
+Sbjct: 254832 ccgcaaaaaagaagcggcttttcccacggctctgtca 254868
+
+
+>Zea_mays_mays
+          Length = 569630
+
+ Score = 30.4 bits (122), Expect = 2.6
+ Identities = 30/37 (81%)
+ Strand = Plus / Minus
+
+                                                   
+Query: 179    ccggaaaaaagaagcggtttttcgcacagcttgctca 215
+              ||| ||||||||||||| ||||| ||| |||   |||
+Sbjct: 162795 ccgcaaaaaagaagcggcttttcccacggctctgtca 162759
+
+
+>Zea_luxurians
+          Length = 539368
+
+ Score = 30.4 bits (122), Expect = 2.6
+ Identities = 30/37 (81%)
+ Strand = Plus / Minus
+
+                                                  
+Query: 179   ccggaaaaaagaagcggtttttcgcacagcttgctca 215
+             ||| ||||||||||||| ||||| ||| |||   |||
+Sbjct: 12740 ccgcaaaaaagaagcggcttttcccacggctctgtca 12704
+
+
+  Database: mt_all
+    Posted date:  Oct 22, 2009  2:41 PM
+  Number of letters in database: 10,372,162
+  Number of sequences in database:  20
+  
+Lambda     K      H
+   0.192    0.176    0.357 
+
+Gapped
+Lambda     K      H
+   0.146   0.0390    0.110 
+
+
+Matrix: blastn matrix:5 -4
+Gap Penalties: Existence: 8, Extension: 6
+Number of Sequences: 20
+Number of Hits to DB: 1,065,572
+Number of extensions: 783347
+Number of successful extensions: 40
+Number of sequences better than 10.0: 17
+Number of HSP's gapped: 26
+Number of HSP's successfully gapped: 25
+Length of query: 489
+Length of database: 10,372,162
+Length adjustment: 138
+Effective length of query: 351
+Effective length of database: 10,369,402
+Effective search space: 3639660102
+Effective search space used: 3639660102
+X1: 73 (20.2 bits)
+X2: 142 (29.9 bits)
+X3: 474 (99.8 bits)
+S1: 113 (33.7 bits)
+S2: 113 (28.5 bits)

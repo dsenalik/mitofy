@@ -1,0 +1,11 @@
+
+========================[ Aug 22, 2008  5:37 PM ]========================
+Version 2.2.16 [Mar-25-2007]
+Started database file "Asn-cp"
+NOTE: CoreLib [002.003] FileOpen("/Users/aja/Library/Preferences/formatdb.cnf","r") failed
+NOTE: CoreLib [002.003] FileOpen(".formatdbrc","r") failed
+NOTE: CoreLib [002.003] FileOpen("/Users/aja/.formatdbrc","r") failed
+NOTE: [000.000] No number of link bits used found in config  file. Ignoring
+NOTE: [000.000] No number of membership bits used found in config file. Ignoring
+Formatted 10 sequences in volume 0
+SUCCESS: formatted database Asn-cp

@@ -1,0 +1,14 @@
+a_thaliana,1
+arabidopsis_thaliana,0
+beta_vulgaris,2
+lcl|a_thaliana,1
+lcl|arabidopsis_thaliana,0
+lcl|beta_vulgaris,2
+lcl|nicotiana_tabacum,3
+lcl|o_sativa_(indica_cultivar-group),5
+lcl|oryza_sativa_(indica_cultivar-group),4
+lcl|triticum_aestivum,6
+nicotiana_tabacum,3
+o_sativa_(indica_cultivar-group),5
+oryza_sativa_(indica_cultivar-group),4
+triticum_aestivum,6

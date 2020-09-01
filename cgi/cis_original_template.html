@@ -1,0 +1,140 @@
+<HTML>
+<TITLE>Sequin input page</TITLE>
+<HEAD>
+
+<FORM ACTION="http://127.0.0.1/cgi-bin/cis_SEQUIN_OUT.pl" METHOD=POST>
+<H2> Sequin Information</H2>
+<HR>
+<!--
+-->
+
+<INPUT TYPE=hidden NAME='taxon' VALUE=TAXON>
+<INPUT TYPE=hidden NAME='project' VALUE=PROJECT>
+
+<table>
+  <tr>
+    <th align=right>Gene:</th>
+    <td><INPUT TYPE=text NAME='gene' VALUE=GENE_NAME></td>
+  </tr>
+  <tr>
+    <th align=right>Gene&nbsp;coords:</th>
+    <td><table><tr><td><INPUT TYPE=text NAME='gene_coords' VALUE=""></td><td>(begin..end)</td></tr></table></td>
+  </tr>
+  <tr valign=top>
+    <th align=right>Feature key:</th>
+    <td>
+      <table width = "100%">
+	<tr>
+	  <td width = "25%"><INPUT TYPE=radio NAME=feature_key VALUE=gene CHECKED>gene</td>
+	  <td width = "25%"><INPUT TYPE=radio NAME=feature_key VALUE=rrna>rRNA</td>
+	  <td width = "25%"><INPUT TYPE=radio NAME=feature_key VALUE=trna>tRNA</td>
+	</tr>
+	<tr>
+	  <td><INPUT TYPE=radio NAME=feature_key VALUE=intron>intron</td>
+	  <td><INPUT TYPE=radio NAME=feature_key VALUE=misc_feature>misc_feature</td>
+	</tr>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <th align=right>Pseudogene:</th>
+    <td>
+      <table width = "100%">
+	<tr>
+	  <td width = "15%"><INPUT TYPE=radio NAME=pseudo VALUE=yes>yes</td>
+	  <td width = "15%"><INPUT TYPE=radio NAME=pseudo VALUE=no CHECKED>no</td>
+	  <td width = "70%"></td>
+	</tr>
+      </table>
+    </td>
+  </tr>
+  <tr></tr>
+  <tr></tr>
+  <tr>
+    <th align=right>Product:</th>
+    <td><INPUT TYPE=text NAME=product size=55 VALUE=PRODUCT></td>
+  </tr>
+  <tr></tr>
+  <tr></tr>
+  <tr>
+    <th align=right>Transl_except<sub>start</sub>:</th>
+    <td>
+      <table>
+	<tr>
+	  <td><INPUT TYPE=text NAME=te_1s size=6 VALUE=>(start coord)</td>
+	  <td><INPUT TYPE=text NAME=te_1e size=6 VALUE=>(end coord)</td>
+	  <td><INPUT TYPE=text NAME=te_1aa size=6 VALUE="Met">(AA)</td>
+	</tr>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <th align=right>Transl_except<sub>stop</sub>:</th>
+    <td>
+      <table>
+	<tr>
+	  <td><INPUT TYPE=text NAME=te_2s size=6 VALUE="">(start coord)</td>
+	  <td><INPUT TYPE=text NAME=te_2e size=6 VALUE="">(end coord)</td>
+	  <td><INPUT TYPE=text NAME=te_2aa size=6 VALUE="TERM">(AA)</td>
+	</tr>
+      </table>
+    </td>
+  </tr>
+  <tr></tr>
+  <tr></tr>
+  <tr>
+    <th align=right>Notes:</th>
+    <td><INPUT TYPE=text NAME=notes size=55 VALUE=""></td>
+  </tr>
+</table>
+<br>
+<HR>
+<table>
+  <tr>
+    <th align=right>Exon annotations</th>
+    <td>(begin..end)</td>
+  </tr>
+</table>
+<table>
+  <tr>
+    <th align=right>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Exon 1:</th>
+    <td><INPUT TYPE=TEXT SIZE=40 NAME=ex1 VALUE=></td>
+  </tr>
+  <tr>
+    <th align=right>Exon 2:</th>
+    <td><INPUT TYPE=TEXT SIZE=40 NAME=ex2 VALUE=></td>
+  </tr>
+  <tr>
+    <th align=right>Exon 3:</th>
+    <td><INPUT TYPE=TEXT SIZE=40 NAME=ex3 VALUE=></td>
+  </tr>
+  <tr>
+    <th align=right>Exon 4:</th>
+    <td><INPUT TYPE=TEXT SIZE=40 NAME=ex4 VALUE=></td>
+  </tr>
+  <tr>
+    <th align=right>Exon 5:</th>
+    <td><INPUT TYPE=TEXT SIZE=40 NAME=ex5 VALUE=></td>
+  </tr>
+</table>
+
+
+<BR>
+<HR>
+
+
+
+<INPUT TYPE=submit VALUE="Submit annotation" onClick="javascript:submit();self.close();">
+<BR>
+
+
+<!--
+<INPUT TYPE=hidden NAME=seqlen VALUE=373419>
+<INPUT TYPE=hidden NAME=num_exons VALUE=1>
+<INPUT TYPE=hidden NAME=unique VALUE=watermelon>
+<INPUT TYPE=hidden NAME=orig_start VALUE=31147>
+-->
+
+<BR>
+</FORM>
+</HTML>

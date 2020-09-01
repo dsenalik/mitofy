@@ -1,0 +1,93 @@
+
+========================[ Apr 28, 2009  4:00 PM ]========================
+Version 2.2.18 [Mar-02-2008]
+Started database file "atp1"
+Formatted 17 sequences in volume 0
+SUCCESS: formatted database atp1
+
+========================[ Dec 9, 2009  8:42 PM ]========================
+Version 2.2.18 [Mar-02-2008]
+Started database file "atp1"
+Formatted 18 sequences in volume 0
+SUCCESS: formatted database atp1
+
+========================[ Dec 9, 2009  8:42 PM ]========================
+Version 2.2.18 [Mar-02-2008]
+Started database file "atp1"
+Formatted 18 sequences in volume 0
+SUCCESS: formatted database atp1
+
+========================[ May 19, 2011 11:03 AM ]========================
+Version 2.2.18 [Mar-02-2008]
+Started database file "atp1"
+WARNING: [000.000] Sequence number 1 (lcl|1_atp1), 186 illegal characters were removed:
+36 Es, 13 Fs, 34 Is, 53 Ls, 25 Ps, 25 Qs
+
+WARNING: [000.000] Sequence number 2 (lcl|2_atp1), 187 illegal characters were removed:
+35 Es, 14 Fs, 35 Is, 52 Ls, 25 Ps, 26 Qs
+
+WARNING: [000.000] Sequence number 3 (lcl|3_atp1), 182 illegal characters were removed:
+31 Es, 14 Fs, 35 Is, 52 Ls, 25 Ps, 25 Qs
+
+WARNING: [000.000] Sequence number 4 (lcl|4_atp1), 184 illegal characters were removed:
+34 Es, 14 Fs, 33 Is, 52 Ls, 23 Ps, 28 Qs
+
+WARNING: [000.000] Sequence number 5 (lcl|5_atp1), 182 illegal characters were removed:
+34 Es, 14 Fs, 33 Is, 52 Ls, 23 Ps, 26 Qs
+
+WARNING: [000.000] Sequence number 6 (lcl|6_atp1), 185 illegal characters were removed:
+34 Es, 14 Fs, 33 Is, 56 Ls, 20 Ps, 28 Qs
+
+WARNING: [000.000] Sequence number 7 (lcl|7_atp1), 187 illegal characters were removed:
+35 Es, 14 Fs, 35 Is, 53 Ls, 24 Ps, 26 Qs
+
+WARNING: [000.000] Sequence number 8 (lcl|8_atp1), 182 illegal characters were removed:
+36 Es, 14 Fs, 36 Is, 48 Ls, 22 Ps, 26 Qs
+
+WARNING: [000.000] Sequence number 9 (lcl|9_atp1), 184 illegal characters were removed:
+37 Es, 14 Fs, 35 Is, 51 Ls, 22 Ps, 25 Qs
+
+WARNING: [000.000] Sequence number 10 (lcl|10_atp1), 299 illegal characters were removed:
+58 Es, 27 Fs, 43 Is, 88 Ls, 45 Ps, 38 Qs
+
+WARNING: [000.000] Sequence number 11 (lcl|11_atp1), 181 illegal characters were removed:
+36 Es, 13 Fs, 35 Is, 52 Ls, 22 Ps, 23 Qs
+
+WARNING: [000.000] Sequence number 12 (lcl|12_atp1), 182 illegal characters were removed:
+36 Es, 14 Fs, 34 Is, 49 Ls, 23 Ps, 26 Qs
+
+WARNING: [000.000] Sequence number 13 (lcl|13_atp1), 181 illegal characters were removed:
+36 Es, 13 Fs, 34 Is, 52 Ls, 22 Ps, 24 Qs
+
+WARNING: [000.000] Sequence number 14 (lcl|14_atp1), 181 illegal characters were removed:
+36 Es, 13 Fs, 34 Is, 52 Ls, 22 Ps, 24 Qs
+
+WARNING: [000.000] Sequence number 15 (lcl|15_atp1), 181 illegal characters were removed:
+36 Es, 13 Fs, 34 Is, 52 Ls, 22 Ps, 24 Qs
+
+WARNING: [000.000] Sequence number 16 (lcl|16_atp1), 181 illegal characters were removed:
+36 Es, 13 Fs, 34 Is, 52 Ls, 22 Ps, 24 Qs
+
+WARNING: [000.000] Sequence number 17 (lcl|17_atp1), 181 illegal characters were removed:
+36 Es, 13 Fs, 34 Is, 52 Ls, 22 Ps, 24 Qs
+
+WARNING: [000.000] Sequence number 18 (lcl|18_atp1), 169 illegal characters were removed:
+30 Es, 6 Fs, 38 Is, 32 Ls, 39 Ps, 24 Qs
+
+WARNING: [000.000] Sequence number 19 (lcl|19_atp1), 188 illegal characters were removed:
+36 Es, 18 Fs, 36 Is, 49 Ls, 22 Ps, 27 Qs
+
+WARNING: [000.000] Sequence number 20 (lcl|20_atp1), 186 illegal characters were removed:
+35 Es, 14 Fs, 37 Is, 54 Ls, 20 Ps, 26 Qs
+
+WARNING: [000.000] Sequence number 21 (lcl|21_atp1), 185 illegal characters were removed:
+35 Es, 15 Fs, 35 Is, 54 Ls, 19 Ps, 27 Qs
+
+Formatted 21 sequences in volume 0
+SUCCESS: formatted database atp1
+
+========================[ May 19, 2011 11:04 AM ]========================
+Version 2.2.18 [Mar-02-2008]
+Started database file "atp1"
+Formatted 21 sequences in volume 0
+SUCCESS: formatted database atp1

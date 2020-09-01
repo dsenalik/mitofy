@@ -1,0 +1,29 @@
+
+========================[ Aug 24, 2008 12:22 PM ]========================
+Version 2.2.16 [Mar-25-2007]
+Started database file "Cys"
+NOTE: CoreLib [002.003] FileOpen("/Users/aja/Library/Preferences/formatdb.cnf","r") failed
+NOTE: CoreLib [002.003] FileOpen(".formatdbrc","r") failed
+NOTE: CoreLib [002.003] FileOpen("/Users/aja/.formatdbrc","r") failed
+NOTE: [000.000] No number of link bits used found in config  file. Ignoring
+NOTE: [000.000] No number of membership bits used found in config file. Ignoring
+Formatted 8 sequences in volume 0
+SUCCESS: formatted database Cys
+
+========================[ May 24, 2010  9:03 AM ]========================
+Version 2.2.18 [Mar-02-2008]
+Started database file "Cys"
+Formatted 14 sequences in volume 0
+SUCCESS: formatted database Cys
+
+========================[ May 24, 2011  4:43 PM ]========================
+Version 2.2.18 [Mar-02-2008]
+Started database file "Cys"
+Formatted 10 sequences in volume 0
+SUCCESS: formatted database Cys
+
+========================[ May 24, 2011  4:44 PM ]========================
+Version 2.2.18 [Mar-02-2008]
+Started database file "Cys-mt"
+Formatted 10 sequences in volume 0
+SUCCESS: formatted database Cys-mt

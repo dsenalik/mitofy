@@ -101,12 +101,12 @@ sub annotate_rna{
     }
     
     #split BLAST output by taxon
-    for( split( /> /, $blast_data ) ){
+    for( split( />/, $blast_data ) ){
       /greedy/ and next; #skip BLAST header
-      
+
       #parse taxon name and gene length
       # if( /^(\S+).*[\n,\t,\s]*Length = (\d+)/ ){
-      if( /\[(.*)\]\s*Length=(\d+)/ ){
+      if( /\[(.*)\]\s*Length=(\d+)/s ){
 	$taxa_count++;
 	$sbjct_taxon = $1;
 	$gene_length = $2;
@@ -121,7 +121,7 @@ sub annotate_rna{
 	  }
 	}
       # }elsif( /^(\S+)\s*(\S+)[\n,\t,\s]*Length = (\d+)/ ){
-      }elsif( /^(\S+).*\s+Length=(\d+)/ ){
+      }elsif( /^(\S+).*\s+Length=(\d+)/s ){
 	$taxa_count++;
 	$sbjct_taxon = $1;
 	$gene_length = $2;
@@ -135,8 +135,9 @@ sub annotate_rna{
 	    push( @gene_lengths, $gene_length );
 	  }
 	}
+      }else{
+        print "ERROR No match parsing \"$_\"\n";
       }
-
       
       #parse gene name
       if( /ref\|.*\|\s(.*)\s\[/ ){

@@ -95,12 +95,16 @@ sub rna_output_header{
   # my $gl  =join( '&nbsp;', @$gene_lengths_ref);
 
   my $gene_lengths;
-  my $min = min( @$gene_lengths_ref );
-  my $max = max( @$gene_lengths_ref );
-  if( $min == $max ){
-    $gene_lengths = $min;
+  if (@$gene_lengths_ref >= 1){
+    my $min = min( @$gene_lengths_ref );
+    my $max = max( @$gene_lengths_ref );
+    if( $min == $max ){
+      $gene_lengths = $min;
+    }else{
+      $gene_lengths = "$min\-$max";
+    }
   }else{
-    $gene_lengths = "$min\-$max";
+    $gene_lengths = 'undefined';
   }
 
   print HTML "<table valign=\"middle\">\n\t<tr nowrap valign=\"middle\">\n";

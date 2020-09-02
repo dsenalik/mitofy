@@ -87,11 +87,9 @@ authors' version, however the versions of tRNAscan-SE and blast+ are different
 than the MacOS versions supplied in the original program.<br>
 This server uses the March 22, 2012 version of <a href=\"http://dogma.ccbb.utexas.edu/mitofy/\">MITOFY</a>,
 version 1.3.1 of <a href=\"http://lowelab.ucsc.edu/tRNAscan-SE/\">tRNAscan-SE</a>,
-and version 2.6.0 of the <a href=\"http://blast.ncbi.nlm.nih.gov/Blast.cgi?CMD=Web&PAGE_TYPE=BlastDocs&DOC_TYPE=Download\">NCBI blast+ programs</a> (updated from version 2.2.28 on Aug. 24, 2017)<br>
-This cgi program, and MITOFY files modified to allow use as a web-based cgi can be downloaded as
-<strike><a href=\"/simonlab/sdata/software/vcrumitofycgi20130701.tar.gz\">vcrumitofycgi20130701.tar.gz</a></strike>
-<a href=\"/simonlab/sdata/software/vcrumitofycgi20170824.tar.gz\">vcrumitofycgi20170824.tar.gz</a><br>
-Contact information: <a href=\"mailto:dsenalik\@wisc.edu\">dsenalik\@wisc.edu</a></p>\n";
+and version 2.10.0 of the <a href=\"http://blast.ncbi.nlm.nih.gov/Blast.cgi?CMD=Web&PAGE_TYPE=BlastDocs&DOC_TYPE=Download\">NCBI blast+ programs</a><br>
+This cgi program, and MITOFY files modified to allow use as a web-based cgi can be downloaded
+from <a href=\"https://github.com/dsenalik/mitofy\">https://github.com/dsenalik/mitofy</a></p>\n";
 
 print "<hr size=\"1\">\n";
 

@@ -162,7 +162,7 @@ foreach $gene ( @mt_genes ){
       if( /\[(.*)\]\s*Length=(\d+)/s ){
 	$sbjct_taxon = $1;
 	$gene_length = $2;
-	$sbjct_taxon =~ s/\s+/_/g;
+	$sbjct_taxon =~ s/[\s\n\r]+/_/g;
 	$sbjct_taxon =~ s/\.//g;
 	$taxa_count++;
 	
@@ -177,8 +177,9 @@ foreach $gene ( @mt_genes ){
 	
       #parse taxon name and gene length, for simple FASTA headers (e.g., ">Cucurbita") 
       # }elsif( /^(\S+)\s*Length = (\d+)/ ){
-      }elsif( /^ (\S+)\s*Length=(\d+)/ ){
+      }elsif( /^ ?(\S+)\s*Length=(\d+)/s ){
 	$sbjct_taxon = $1;
+	$sbjct_taxon =~ s/[\s\n\r]+/_/g;
 	$gene_length = $2;
 	$taxa_count++;
 	#store non-redundant gene lengths in @gene_lengths
@@ -190,6 +191,7 @@ foreach $gene ( @mt_genes ){
 	  }
 	}
       }
+    else { print "Warning, no sbjct_taxon found in \"$_\"\n"; }
       
       # parse all of the hits for this taxon
       parse_hits_within_taxon( $query_taxon, $sbjct_taxon, \$file, \%HITS, $gene, $gene_length );

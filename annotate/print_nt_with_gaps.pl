@@ -146,7 +146,9 @@ sub print_nt_with_gaps {
   #build the actual coordinate string, by concatenating the coordinates and spaces
   for( $i = 0; $i < @caret_coordinates; $i++ ){
     $position_string .= $caret_coordinates[$i];
+{ no warnings;  # VCRU addition, newer versions of Perl will give "Negative repeat count does nothing at /var/www/cgi-bin/mitofy/annotate/print_nt_with_gaps.pl line 149" warnings, although this is probably a true bug here
     $position_string .= "&nbsp;" x $num_spaces[$i];
+} # VCRU addition
   }
 ####//////////////////////////////////////////////////////////////////////////////####
 ####/////////////////////////////////////END//////////////////////////////////////####

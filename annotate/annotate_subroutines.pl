@@ -383,12 +383,16 @@ sub print_output_header{
   # @$gene_lengths_ref = sort {$a <=> $b}( @$gene_lengths_ref);
   # my $gl = join( ',&nbsp;', @$gene_lengths_ref);
   my $gl;
-  my $min = min( @$gene_lengths_ref );
-  my $max = max( @$gene_lengths_ref );
-  if( $min == $max ){
-    $gl = $min;
+  if (@$gene_lengths_ref >= 1){
+    my $min = min( @$gene_lengths_ref );
+    my $max = max( @$gene_lengths_ref );
+    if( $min == $max ){
+      $gl = $min;
+    }else{
+      $gl = "$min\-$max";
+    }
   }else{
-    $gl = "$min\-$max";
+    $gl = 'undefined';
   }
 
   print HTML "<table valign=\"middle\">\n\t<tr nowrap valign=\"middle\">\n";

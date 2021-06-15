@@ -86,10 +86,11 @@ web site shown above. The algorithms of MITOFY have not been modified from the
 authors' version, however the versions of tRNAscan-SE and blast+ are different
 than the MacOS versions supplied in the original program.<br>
 This server uses the March 22, 2012 version of <a href=\"http://dogma.ccbb.utexas.edu/mitofy/\">MITOFY</a>,
-version 1.3.1 of <a href=\"http://lowelab.ucsc.edu/tRNAscan-SE/\">tRNAscan-SE</a>,
-and version 2.10.0 of the <a href=\"http://blast.ncbi.nlm.nih.gov/Blast.cgi?CMD=Web&PAGE_TYPE=BlastDocs&DOC_TYPE=Download\">NCBI blast+ programs</a><br>
+and is currently using version 1.3.1 of <a href=\"http://lowelab.ucsc.edu/tRNAscan-SE/\">tRNAscan-SE</a>,
+and version 2.11.0+ of the <a href=\"http://blast.ncbi.nlm.nih.gov/Blast.cgi?CMD=Web&PAGE_TYPE=BlastDocs&DOC_TYPE=Download\">NCBI blast+ programs</a><br>
 This cgi program, and MITOFY files modified to allow use as a web-based cgi can be downloaded
-from <a href=\"https://github.com/dsenalik/mitofy\">https://github.com/dsenalik/mitofy</a></p>\n";
+from <a href=\"https://github.com/dsenalik/mitofy\">https://github.com/dsenalik/mitofy</a>
+</p>\n";
 
 print "<hr size=\"1\">\n";
 
@@ -188,9 +189,9 @@ if ( $submit )
       $cmd .= " --rna_mlen=\"$rna_mlen\"";
       $cmd .= " \"$tmpfile1\"";
       $cmd .= " \"$projectid\"";
-      $cmd .= " &> \"$tmpfile2\"";
+      $cmd .= " &> \"$tmpfile2\"";  # this part caused failure if using system(), change to run() 2021-06-15
       debugmsg ( "Running command \"$cmd\"" );
-      my $result = system ( $cmd );
+      my $result = run ( $cmd );
       if ( $result ) { HD_die ( "Error $result running command \"$cmd\"" ); }
       exit ( 0 );
     }
@@ -242,7 +243,7 @@ if ( $submit )
       {
       my $cmd = "$zipbinary -9 -j -r \"$tmpfile3\" \"$projectdir\" &> \"$tmpfile4\"";  # -j to store files without path
       debugmsg ( "Running command \"$cmd\"" );
-      my $result = system ( $cmd );
+      my $result = run ( $cmd );
       if ( $result )
         { print ( "<p>Error $result creating archive of all output files with command \"$cmd\"<br>See <a href=\"$tmpfile4url\">log file</a></p>\n" ); }
       else
@@ -393,10 +394,13 @@ sub HD_die { my ( $message ) = @_;
 ############################################################
 sub include { my ( $filename ) = @_;
 ############################################################
-  if ( open my $HDRFILE,"<",$filename ) # no error if not present
+  if ( $filename )
     {
-      print <$HDRFILE>;
-      close $HDRFILE;
+      if ( open my $HDRFILE,"<",$filename ) # no error if not present
+        {
+          print <$HDRFILE>;
+          close $HDRFILE;
+        }
     }
 } # include
 
@@ -422,6 +426,24 @@ sub HD_untaint { my ( $filename, $allowchars ) = @_;
     } # if ( $filename )
   return $filename;
 } # sub HD_untaint
+
+
+
+###############################################################
+sub run { my ( $command, $errorokay ) = @_;
+###############################################################
+# Run a system command, but use bash. Perl by default uses sh.
+# Command may be piped multiple commands or redirected from or to files.
+  my $result = system( '/bin/bash', '-o', 'pipefail', '-c', $command );
+  if ( ( $result ) and ( ! $errorokay ) )
+    {
+      # exitvalue 141 can occur if piping to head or grep -q
+      my $exitvalue = $result >> 8;
+      my $signal = $result & 255;
+      HD_die( "Error $exitvalue:$signal running command \"$command\"\n" );
+    }
+  return( $result );
+} # sub run
 
 
 
